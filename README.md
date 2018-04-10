@@ -22,7 +22,7 @@ Before the setting up, you need to install Ansible.
 
 Finally, run Ansible.
 ```
-sudo ansible-playbook -i /vagrant/develop /vagrant/playbook.yml 
+sudo ansible-playbook -i /vagrant/develop /vagrant/playbook.yml
 ```
 
 You have to logout / login to the box again for applying changes on `~/.bashrc`.
@@ -36,25 +36,35 @@ You have to logout / login to the box again for applying changes on `~/.bashrc`.
  ```
  vagrant ssh
  ```
- 
+
 1. cd to WPCS2 directory
 
  ```
  cd vagrant/WPCS2
  ```
- 
+
+1. change opt/rbenv/shims auth
+```
+sudo chown -R $(whoami):admin /opt/rbenv/shims
+```
+
+1. rbenv rehash
+```
+rbenv rehash
+```
+
 1. Install gems
 
  ```
  bundler install
  ```
- 
+
 1. Install node packages
 
  ```
  npm install
  ```
- 
+
 1. Serve the app
 
  ```

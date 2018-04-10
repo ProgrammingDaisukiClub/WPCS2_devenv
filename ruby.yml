@@ -22,13 +22,13 @@
   lineinfile:
     create: yes
     state: present
-    dest: /etc/bash.bashrc
+    dest: ~/.bashrc
     line: 'export RBENV_ROOT="/opt/rbenv"'
 
 - name: Update PATH for rbenv
   lineinfile:
     state: present
-    dest: /etc/bash.bashrc
+    dest: ~/.bashrc
     line: 'export PATH="/opt/rbenv/bin:$PATH" && eval "$(rbenv init -)"'
 
 - name: Get ruby-build from GitHub
@@ -66,7 +66,7 @@
 - name: Update PATH for gem
   lineinfile:
     state: present
-    dest: /etc/bash.bashrc
+    dest: ~/.bashrc
     line: 'PATH="`ruby -e "puts Gem.user_dir"`/bin:$PATH"'
 
 - name: Install gems
@@ -75,4 +75,3 @@
     - rails
     - railties
     - bundler
-
