@@ -42,7 +42,7 @@
     state: present
 
 - name: Install ruby
-  shell: export RBENV_ROOT="/opt/rbenv"; /opt/rbenv/bin/rbenv install -s 2.4.0
+  shell: export RBENV_ROOT="/opt/rbenv"; /opt/rbenv/bin/rbenv install -s 2.5.1
   become: yes
 
 - name: Create link from /usr/bin/ruby
@@ -60,7 +60,7 @@
   become: yes
 
 - name: Set rbenv
-  shell: export RBENV_ROOT="/opt/rbenv"; /opt/rbenv/bin/rbenv global 2.4.0
+  shell: export RBENV_ROOT="/opt/rbenv"; /opt/rbenv/bin/rbenv global 2.5.1
   become: yes
 
 - name: Update PATH for gem
